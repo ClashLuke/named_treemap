@@ -85,5 +85,5 @@ def named_treemap(fn: Callable[[KeyType, InValueType], OutValueType], *x: Any, u
         return dict_map(_index(0), x)
 
     out = dict_map(_unpack, out)
-    out = dict_map(named_flatten, out)
+    out = dict_map(named_unflatten, out)
     return named_unflatten(out)
