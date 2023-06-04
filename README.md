@@ -25,6 +25,8 @@ def fn(prefix: Tuple[Any, ...], *items):
 obj = {"3": {"2": [1, 2]}, "1": (0,)}
 print("Original:", obj)  # Original: {'3': {'2': [1, 2]}, '1': (0,)}
 obj = ntm.named_treemap(fn, obj, obj)
+# ('3', '2', 0) (1, 1)   -   0 (int) is a list index
+# ('3', '2', 1) (2, 2)   -   1 (int) is a list index
+# ('1', 0.0) (0, 0)      -   0.0 (float) is a tuple index
 print("Modified:", obj)  # Modified: {'3': {'2': [2, 3]}, '1': (1,)}
-
 ```
